@@ -28,6 +28,25 @@ class TestEuler(unittest.TestCase):
         self.assertEqual(Problems.problem_005(5), 60)
         self.assertEqual(Problems.problem_005(10), 2520)
         
+    def test_006(self):
+        self.assertEqual(Problems.problem_006(1), 1)       
+        self.assertEqual(Problems.problem_006(10), 2640)
+        
+    def test_007(self):
+        self.assertEqual(Problems.problem_007(1), 2)
+        self.assertEqual(Problems.problem_007(2), 3)
+        self.assertEqual(Problems.problem_007(3), 5)
+        self.assertEqual(Problems.problem_007(4), 7)
+        self.assertEqual(Problems.problem_007(5), 11)
+        self.assertEqual(Problems.problem_007(6), 13)
+        
+    def test_008(self):
+        self.assertEqual(Problems.problem_008(1, 1), 1)
+        
+    def test_009(self):
+        self.assertEqual(Problems.problem_009(12), 60)
+        self.assertEqual(Problems.problem_009(30), 780)        
+        
     def test_010(self):
         self.assertEqual(Problems.problem_010(10), 17)
         self.assertEqual(Problems.problem_010(20), 77)

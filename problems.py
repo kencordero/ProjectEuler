@@ -2,7 +2,7 @@
 import kmath
 
 class Problems(object):
-    def problem_001(factor1, factor2, limit):
+    def problem_001(factor1, factor2, limit): #O(n)
         """Multiples of 3 and 5
         
         If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
@@ -15,7 +15,7 @@ class Problems(object):
                 sum += i
         return sum
         
-    def problem_001_alt(num1, num2, limit):
+    def problem_001_alt(num1, num2, limit): #O(1)
         quotient1 = int((limit - 1)/num1)
         quotient2 = int((limit - 1)/num2)
         sum1 = int(quotient1 * (quotient1 + 1) / 2 * num1)
@@ -71,7 +71,7 @@ class Problems(object):
         """
         pass
         
-    def problem_006():
+    def problem_006(limit):
         """Sum square difference
 
         The sum of the squares of the first ten natural numbers is, 1^2 + 2^2 + ... + 10^2 = 385
@@ -83,7 +83,7 @@ class Problems(object):
         """
         pass
     
-    def problem_007():
+    def problem_007(n):
         """10,001st prime
 
         By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
@@ -92,7 +92,7 @@ class Problems(object):
         """
         pass
         
-    def problem_008():
+    def problem_008(number, n_digits):
         """Largest product in a series
 
         Find the greatest product of five consecutive digits in the 1000-digit number.
@@ -120,7 +120,7 @@ class Problems(object):
         """
         pass
         
-    def problem_009():
+    def problem_009(triplet_sum):
         """Special Pythagorean triplet
 
         A Pythagorean triplet is a set of three natural numbers, a < b < c, for which, a^2 + b^2 = c^2
