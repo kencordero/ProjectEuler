@@ -16,10 +16,12 @@ def E(): #base of natural logarithms
     return 2.71828183
 
 def factorial(x):
-    if (x < 2):
+    if x < 0:
+        return None
+    elif x < 2:
         return 1
     else:
-        return x * factorial(x-1)	
+        return x * factorial(x - 1)	
 
 def GCF(x, y):
     if (y > x):  #swap the numbers
