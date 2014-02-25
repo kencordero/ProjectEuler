@@ -14,9 +14,6 @@ def get_nth_fibonacci(n):
     ratio = (1 + root5) / 2
     return round((pow(ratio, n) - pow(1 - ratio, n)) / root5)
 
-def E(): #base of natural logarithms
-    return 2.71828183
-
 def factorial(x):
     if x < 0:
         return None
@@ -40,9 +37,6 @@ def LCM(x, y):
 def PHI(): #golden ratio    
     return (1 + pow(5, 0.5)) / 2
     
-def PI():  #returns pi
-    return 3.14159265
-
 def is_prime(x):
     #TODO
     pass    
