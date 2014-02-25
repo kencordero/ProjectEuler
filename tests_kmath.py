@@ -16,10 +16,12 @@ class TestKMath(unittest.TestCase):
         self.assertEqual(next(gen), 55)                
         
     def test_get_nth_fibonacci(self):
+        self.assertEqual(kmath.get_nth_fibonacci(0), None)
         self.assertEqual(kmath.get_nth_fibonacci(1), 1)
         self.assertEqual(kmath.get_nth_fibonacci(2), 1)
         self.assertEqual(kmath.get_nth_fibonacci(3), 2)
         self.assertEqual(kmath.get_nth_fibonacci(4), 3)
+        self.assertEqual(kmath.get_nth_fibonacci(4.5), None)
         self.assertEqual(kmath.get_nth_fibonacci(5), 5)
         self.assertEqual(kmath.get_nth_fibonacci(6), 8)
         self.assertEqual(kmath.get_nth_fibonacci(7), 13)
@@ -34,6 +36,7 @@ class TestKMath(unittest.TestCase):
         self.assertEqual(kmath.factorial(2), 2)
         self.assertEqual(kmath.factorial(3), 6)
         self.assertEqual(kmath.factorial(4), 24)
+        self.assertEqual(kmath.factorial(4.5), None)
         self.assertEqual(kmath.factorial(5), 120)
         self.assertEqual(kmath.factorial(6), 720)
         self.assertEqual(kmath.factorial(7), 5040)
@@ -42,11 +45,20 @@ class TestKMath(unittest.TestCase):
         self.assertEqual(kmath.factorial(10), 3628800)        
 	
     def test_GCF(self):
-        pass
-
+        self.assertEqual(kmath.GCF(1920, 1080), 120)
+        self.assertEqual(kmath.GCF(120, 240), 120)
+        self.assertEqual(kmath.GCF(50, 60), 10)
+        self.assertEqual(kmath.GCF(10, 5), 5)
+        
     def test_LCM(self):
-        pass
-
+        self.assertEqual(kmath.LCM(3, 4), 12)
+        self.assertEqual(kmath.LCM(4, 6), 12)
+        self.assertEqual(kmath.LCM(6, 8), 24)
+        self.assertEqual(kmath.LCM(8, 12), 24)
+        self.assertEqual(kmath.LCM(12, 15), 60)
+        self.assertEqual(kmath.LCM(15, 20), 60)
+        self.assertEqual(kmath.LCM(20, 30), 60)
+        
     def test_is_prime(self):
         self.assertTrue(kmath.is_prime(2))
         self.assertTrue(kmath.is_prime(3))
@@ -60,7 +72,10 @@ class TestKMath(unittest.TestCase):
         self.assertTrue(kmath.is_prime(11))    
         
     def test_reduce_fraction(self):
-        pass
+        self.assertEqual(kmath.reduce_fraction(1920, 1080), (16, 9))
+        self.assertEqual(kmath.reduce_fraction(120, 240), (1, 2))
+        self.assertEqual(kmath.reduce_fraction(50, 60), (5, 6))
+        self.assertEqual(kmath.reduce_fraction(10, 5), (2, 1))        
 
         
 if __name__ == '__main__':

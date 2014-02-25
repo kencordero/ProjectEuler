@@ -8,6 +8,8 @@ def fibonacci_gen():
         a += b
         
 def get_nth_fibonacci(n):
+    if n < 1:
+        return None
     root5 = pow(5, 0.5)
     ratio = (1 + root5) / 2
     return round((pow(ratio, n) - pow(1 - ratio, n)) / root5)
@@ -35,9 +37,9 @@ def GCF(x, y):
 def LCM(x, y):
     return int(x * y / GCF(x, y))
 
-def PHI(): #golden ratio
-    return 1.61803399	
-
+def PHI(): #golden ratio    
+    return (1 + pow(5, 0.5)) / 2
+    
 def PI():  #returns pi
     return 3.14159265
 
@@ -45,7 +47,8 @@ def is_prime(x):
     #TODO
     pass    
 
-def reduce_fraction(num, den):
-    lcm = LCM(num, den)
-    num = num / lcm
-    den = num / lcm
+def reduce_fraction(numerator, denominator):
+    gcf = GCF(numerator, denominator)
+    numerator = numerator / gcf
+    denominator = denominator / gcf
+    return numerator, denominator
