@@ -6,6 +6,11 @@ class TestEuler(unittest.TestCase):
         self.assertEqual(Problems.problem_001(2, 3, 10), 32)
         self.assertEqual(Problems.problem_001(3, 5, 9), 14)
         self.assertEqual(Problems.problem_001(3, 5, 10), 23)
+        
+    def test_001_alt(self):
+        self.assertEqual(Problems.problem_001_alt(2, 3, 10), 32)
+        self.assertEqual(Problems.problem_001_alt(3, 5, 9), 14)
+        self.assertEqual(Problems.problem_001_alt(3, 5, 10), 23)
     
     def test_002(self):
         self.assertEqual(Problems.problem_002(10), 10)

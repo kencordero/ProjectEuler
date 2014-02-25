@@ -1,5 +1,5 @@
 #Project Euler
-from kmath import KMath
+import kmath
 
 class Problems(object):
     def problem_001(factor1, factor2, limit):
@@ -20,7 +20,7 @@ class Problems(object):
         quotient2 = int((limit - 1)/num2)
         sum1 = int(quotient1 * (quotient1 + 1) / 2 * num1)
         sum2 = int(quotient2 * (quotient2 + 1) / 2 * num2)
-        lcm = kMath.LCM(num1, num2)
+        lcm = kmath.LCM(num1, num2)
         quotient3 = int((limit - 1) / lcm)
         sum3 = int(quotient3 * (quotient3 + 1) / 2 * lcm)
         sum = sum1 + sum2 - sum3
