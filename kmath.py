@@ -8,15 +8,15 @@ def fibonacci_gen():
         a += b
         
 def get_nth_fibonacci(n):
-    if n < 1:
-        return None
+    if not float(n).is_integer() or n < 1:
+        raise ValueError
     root5 = pow(5, 0.5)
     ratio = (1 + root5) / 2
     return round((pow(ratio, n) - pow(1 - ratio, n)) / root5)
 
 def factorial(x):
-    if x < 0:
-        return None
+    if not float(x).is_integer() or x < 0:
+        raise ValueError
     elif x < 2:
         return 1
     else:
@@ -38,8 +38,11 @@ def PHI(): #golden ratio
     return (1 + pow(5, 0.5)) / 2
     
 def is_prime(x):
-    #TODO
-    pass    
+    for i in range(2, int(pow(x, 0.5)) + 1):
+        if x % i == 0:
+            return False
+        i += 1
+    return True    
 
 def reduce_fraction(numerator, denominator):
     gcf = GCF(numerator, denominator)

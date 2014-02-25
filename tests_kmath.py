@@ -16,12 +16,12 @@ class TestKMath(unittest.TestCase):
         self.assertEqual(next(gen), 55)                
         
     def test_get_nth_fibonacci(self):
-        self.assertEqual(kmath.get_nth_fibonacci(0), None)
+        self.assertRaises(ValueError, kmath.get_nth_fibonacci, 0)
         self.assertEqual(kmath.get_nth_fibonacci(1), 1)
         self.assertEqual(kmath.get_nth_fibonacci(2), 1)
         self.assertEqual(kmath.get_nth_fibonacci(3), 2)
         self.assertEqual(kmath.get_nth_fibonacci(4), 3)
-        self.assertEqual(kmath.get_nth_fibonacci(4.5), None)
+        self.assertRaises(ValueError, kmath.get_nth_fibonacci, 4.5)
         self.assertEqual(kmath.get_nth_fibonacci(5), 5)
         self.assertEqual(kmath.get_nth_fibonacci(6), 8)
         self.assertEqual(kmath.get_nth_fibonacci(7), 13)
@@ -30,13 +30,13 @@ class TestKMath(unittest.TestCase):
         self.assertEqual(kmath.get_nth_fibonacci(10), 55)        
     
     def test_factorial(self):
-        self.assertEqual(kmath.factorial(-1), None)
+        self.assertRaises(ValueError, kmath.factorial, -1)
         self.assertEqual(kmath.factorial(0), 1)       
         self.assertEqual(kmath.factorial(1), 1)
         self.assertEqual(kmath.factorial(2), 2)
         self.assertEqual(kmath.factorial(3), 6)
         self.assertEqual(kmath.factorial(4), 24)
-        self.assertEqual(kmath.factorial(4.5), None)
+        self.assertRaises(ValueError, kmath.factorial, 4.5)
         self.assertEqual(kmath.factorial(5), 120)
         self.assertEqual(kmath.factorial(6), 720)
         self.assertEqual(kmath.factorial(7), 5040)
