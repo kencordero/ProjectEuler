@@ -60,9 +60,13 @@ class TestKMath(unittest.TestCase):
         self.assertEqual(kmath.LCM(20, 30), 60)
         
     def test_is_prime(self):
+        self.assertRaises(ValueError, kmath.is_prime, -1)
+        self.assertFalse(kmath.is_prime(0))
+        self.assertFalse(kmath.is_prime(1))        
         self.assertTrue(kmath.is_prime(2))
         self.assertTrue(kmath.is_prime(3))
         self.assertFalse(kmath.is_prime(4))
+        self.assertRaises(ValueError, kmath.is_prime, 4.5)
         self.assertTrue(kmath.is_prime(5))
         self.assertFalse(kmath.is_prime(6))
         self.assertTrue(kmath.is_prime(7))

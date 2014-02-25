@@ -38,6 +38,10 @@ def PHI(): #golden ratio
     return (1 + pow(5, 0.5)) / 2
     
 def is_prime(x):
+    if x < 0 or not float(x).is_integer():
+        raise ValueError
+    if x < 2:
+        return False
     for i in range(2, int(pow(x, 0.5)) + 1):
         if x % i == 0:
             return False
