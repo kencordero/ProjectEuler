@@ -51,7 +51,12 @@ class Problems(object):
         
         What is the largest prime factor of the number 600,851,475,143 ?
         """
-        pass
+        lpf = 0 #largest prime factor
+        for i in range(2, int(pow(number, 0.5)) + 1):
+            while number % i == 0:
+                number /= i
+                lpf = i
+        return lpf
         
     def problem_004(n_digits):
         """Largest palindrome product
@@ -68,8 +73,7 @@ class Problems(object):
         2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
         
         What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
-        """
-        pass
+        """        
         
     def problem_006(limit):
         """Sum square difference
@@ -131,13 +135,17 @@ class Problems(object):
         """
         pass
         
-    def problem_010(range):
+    def problem_010(limit):
         """Summation of primes
 
         The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 
-        Find the sum of all the primes below two million.        
+        Find the sum of all the primes below two million.
         """
-        pass
+        sum = 0
+        for i in range(2, limit):
+            if kmath.is_prime(i):
+                sum += i
+        return sum
         
 

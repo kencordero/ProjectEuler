@@ -44,8 +44,7 @@ def is_prime(x):
         return False
     for i in range(2, int(pow(x, 0.5)) + 1):
         if x % i == 0:
-            return False
-        i += 1
+            return False        
     return True    
 
 def is_palindrome(x):
