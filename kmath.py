@@ -48,6 +48,9 @@ def is_prime(x):
         i += 1
     return True    
 
+def is_palindrome(x):
+    return str(x) == str(x)[::-1]
+
 def reduce_fraction(numerator, denominator):
     gcf = GCF(numerator, denominator)
     numerator = numerator / gcf

@@ -75,6 +75,18 @@ class TestKMath(unittest.TestCase):
         self.assertFalse(kmath.is_prime(10))
         self.assertTrue(kmath.is_prime(11))    
         
+    def test_is_palindrome(self):
+        self.assertFalse(kmath.is_palindrome(-1))
+        self.assertTrue(kmath.is_palindrome(0))        
+        self.assertTrue(kmath.is_palindrome(4.4)) 
+        self.assertFalse(kmath.is_palindrome(4.5))
+        self.assertTrue(kmath.is_palindrome(5))        
+        self.assertFalse(kmath.is_palindrome(15))
+        self.assertTrue(kmath.is_palindrome(66))
+        self.assertTrue(kmath.is_palindrome(232))
+        self.assertTrue(kmath.is_palindrome(1001))
+        self.assertFalse(kmath.is_palindrome(1031))        
+        
     def test_reduce_fraction(self):
         self.assertEqual(kmath.reduce_fraction(1920, 1080), (16, 9))
         self.assertEqual(kmath.reduce_fraction(120, 240), (1, 2))
