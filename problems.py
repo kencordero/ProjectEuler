@@ -51,14 +51,7 @@ class Problems(object):
         
         What is the largest prime factor of the number 600,851,475,143 ?
         """
-        lpf = 0 # largest prime factor
-        i = 2
-        while i <= number:
-            while number % i == 0:
-                number /= i
-                lpf = i
-            i += 1
-        return lpf
+        return kmath.get_largest_prime_factor(number)
         
     def _004(n_digits):
         """Largest palindrome product
