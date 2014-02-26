@@ -13,7 +13,7 @@ class TestKMath(unittest.TestCase):
         self.assertEqual(next(gen), 13)
         self.assertEqual(next(gen), 21)
         self.assertEqual(next(gen), 34)
-        self.assertEqual(next(gen), 55)                
+        self.assertEqual(next(gen), 55)
         
     def test_get_nth_fibonacci(self):
         f = kmath.get_nth_fibonacci
@@ -28,12 +28,12 @@ class TestKMath(unittest.TestCase):
         self.assertEqual(f(7), 13)
         self.assertEqual(f(8), 21)
         self.assertEqual(f(9), 34)
-        self.assertEqual(f(10), 55)        
+        self.assertEqual(f(10), 55)
     
     def test_factorial(self):
         f = kmath.factorial
         self.assertRaises(ValueError, f, -1)
-        self.assertEqual(f(0), 1)       
+        self.assertEqual(f(0), 1)
         self.assertEqual(f(1), 1)
         self.assertEqual(f(2), 2)
         self.assertEqual(f(3), 6)
@@ -44,7 +44,7 @@ class TestKMath(unittest.TestCase):
         self.assertEqual(f(7), 5040)
         self.assertEqual(f(8), 40320)
         self.assertEqual(f(9), 362880)
-        self.assertEqual(f(10), 3628800)        
+        self.assertEqual(f(10), 3628800)
 	
     def test_GCF(self):
         f = kmath.GCF
@@ -67,7 +67,7 @@ class TestKMath(unittest.TestCase):
         f = kmath.is_prime
         self.assertRaises(ValueError, f, -1)
         self.assertFalse(f(0))
-        self.assertFalse(f(1))        
+        self.assertFalse(f(1))
         self.assertTrue(f(2))
         self.assertTrue(f(3))
         self.assertFalse(f(4))
@@ -83,23 +83,36 @@ class TestKMath(unittest.TestCase):
     def test_is_palindrome(self):
         f = kmath.is_palindrome
         self.assertFalse(f(-1))
-        self.assertTrue(f(0))        
+        self.assertTrue(f(0))
         self.assertTrue(f(4.4)) 
         self.assertFalse(f(4.5))
-        self.assertTrue(f(5))        
+        self.assertTrue(f(5))
         self.assertFalse(f(15))
         self.assertTrue(f(66))
         self.assertTrue(f(232))
         self.assertTrue(f(1001))
-        self.assertFalse(f(1031))        
+        self.assertFalse(f(1031))
         
     def test_reduce_fraction(self):
         f = kmath.reduce_fraction
         self.assertEqual(f(1920, 1080), (16, 9))
         self.assertEqual(f(120, 240), (1, 2))
         self.assertEqual(f(50, 60), (5, 6))
-        self.assertEqual(f(10, 5), (2, 1))        
-
+        self.assertEqual(f(10, 5), (2, 1))
+    
+    def test_get_largest_prime_factor(self):
+        f = kmath.get_largest_prime_factor
+        self.assertEqual(f(28), 7)
+        self.assertEqual(f(29), 29)
+        self.assertEqual(f(100), 5)
+        self.assertEqual(f(13195), 29)
         
+    def test_get_smallest_prime_factor(self):
+        f = kmath.get_smallest_prime_factor
+        self.assertEqual(f(28), 2)
+        self.assertEqual(f(29), 29)
+        self.assertEqual(f(100), 2)
+        self.assertEqual(f(13195), 5)
+
 if __name__ == '__main__':
     unittest.main()
