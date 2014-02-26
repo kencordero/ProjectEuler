@@ -14,6 +14,23 @@ def get_nth_fibonacci(n):
     ratio = (1 + root5) / 2
     return round((pow(ratio, n) - pow(1 - ratio, n)) / root5)
 
+def get_largest_prime_factor(x):
+    lpf = 0 #largest prime factor
+    i = 2
+    while i <= x:
+        while x % i == 0:
+            x /= i
+            lpf = i
+        i += 1
+    return lpf
+    
+def get_smallest_prime_factor(x):
+    i = 2
+    while i <= x:
+        if x % i == 0:
+            return i
+        i += 1
+    
 def factorial(x):
     if not float(x).is_integer() or x < 0:
         raise ValueError
