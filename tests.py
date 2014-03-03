@@ -53,11 +53,14 @@ class TestEuler(unittest.TestCase):
     def test_008(self):
         f = Problems._008
         self.assertEqual(f(1, 1), 1)
+        self.assertEqual(f(299792458, 2), 81)       # speed of light
+        self.assertEqual(f(149597870700, 3), 504)   # astronomical unit
         
     def test_009(self):
         f = Problems._009
         self.assertEqual(f(12), 60)
-        self.assertEqual(f(30), 780)        
+        self.assertEqual(f(30), 780)
+        self.assertEqual(f(56), 4200)
         
     def test_010(self):
         f = Problems._010
