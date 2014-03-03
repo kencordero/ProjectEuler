@@ -16,16 +16,15 @@ class Problems(object):
         return sum
         
     def _001_alt(num1, num2, limit): #O(1)
-        quotient1 = int((limit - 1) / num1)
-        quotient2 = int((limit - 1) / num2)
-        sum1 = int(quotient1 * (quotient1 + 1) / 2 * num1)
-        sum2 = int(quotient2 * (quotient2 + 1) / 2 * num2)
-        lcm = kmath.LCM(num1, num2)
+        quotient1 = int((limit - 1) / num1) # number of terms divisible by num1
+        quotient2 = int((limit - 1) / num2) # number of terms divisible by num2
+        sum1 = int(quotient1 * (quotient1 + 1) / 2 * num1) # sum all numbers div by num1
+        sum2 = int(quotient2 * (quotient2 + 1) / 2 * num2) # sum all numbers div by num2
+        lcm = kmath.LCM(num1, num2)  
         quotient3 = int((limit - 1) / lcm)
-        sum3 = int(quotient3 * (quotient3 + 1) / 2 * lcm)
-        sum = sum1 + sum2 - sum3
-        return sum
-    
+        sum3 = int(quotient3 * (quotient3 + 1) / 2 * lcm) # sum all number div by num1 and num2
+        return sum1 + sum2 - sum3
+        
     def _002(limit): # O(n)
         """Even Fibonacci numbers
         
@@ -91,7 +90,7 @@ class Problems(object):
         """
         pass
         
-    def _008(number, n_digits):
+    def _008(number, n_consecutive_digits):
         """Largest product in a series
 
         Find the greatest product of five consecutive digits in the 1000-digit number.
@@ -116,8 +115,11 @@ class Problems(object):
         84580156166097919133875499200524063689912560717606
         05886116467109405077541002256983155200055935729725
         71636269561882670428252483600823257530420752963450
-        """
-        pass
+        """ 
+        greatest_product = 0
+        str_num = number
+        for i in range(1, kmath.get_n_digits(number)-n_consecutive_digits+2):
+            product = str_num[i]
         
     def _009(triplet_sum):
         """Special Pythagorean triplet
