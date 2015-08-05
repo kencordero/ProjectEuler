@@ -118,8 +118,8 @@ class Problems(object):
         """ 
         greatest_product = 0
         str_num = number
-        for i in range(1, kmath.get_n_digits(number)-n_consecutive_digits+2):
-            product = str_num[i]
+        for i in range(1, kmath.get_n_digits(number)-n_consecutive_digits):
+            product = str(str_num)[i]
         
     def _009(triplet_sum):
         """Special Pythagorean triplet
