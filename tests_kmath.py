@@ -65,6 +65,17 @@ class TestKMath(unittest.TestCase):
         self.assertEqual(f(8), 21)
         self.assertEqual(f(9), 34)
         self.assertEqual(f(10), 55)
+        
+    def test_get_nth_prime(self):
+        f = kmath.get_nth_prime
+        self.assertRaises(ValueError, f, 0)
+        self.assertEqual(f(1), 2)
+        self.assertEqual(f(2), 3)
+        self.assertRaises(ValueError, f, 4.5)
+        self.assertEqual(f(5), 11)        
+        self.assertEqual(f(10), 29)
+        self.assertEqual(f(100), 541)
+        self.assertRaises(ValueError, f, 'Steve?')
  
     def test_get_smallest_prime_factor(self):
         f = kmath.get_smallest_prime_factor

@@ -44,6 +44,22 @@ def get_nth_fibonacci(n):
     root5 = pow(5, 0.5)
     ratio = (1 + root5) / 2
     return round((pow(ratio, n) - pow(1 - ratio, n)) / root5)
+    
+def get_nth_prime(n):
+    if not float(n).is_integer() or n < 1:
+        raise ValueError
+    if n == 1: return 2
+    prime_counter = 1
+    prime_candidate = 3 
+    while prime_counter < n:
+        factor_candidate = 3
+        prime_candidate_root = math.sqrt(prime_candidate)
+        while factor_candidate <= prime_candidate_root:
+            if prime_candidate % factor_candidate == 0: break
+            factor_candidate += 2
+        if factor_candidate > prime_candidate_root: prime_counter += 1
+        prime_candidate += 2
+    return prime_candidate - 2
 
 def get_smallest_prime_factor(x):
     i = 2
